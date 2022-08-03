@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <nav >
+        <div id="navUP">
+            <h1>LA VERDAD ABSOLUTA</h1>
+        </div>
+        <div id="navDOWN">
+            <a href="/">
+            inicio
+            </a>
+            <a href="/deportes">
+            Deportes
+            </a>
+            <a href="/politica">
+            Politica
+            </a>
+            <a href="/admin">
+                Login
+            </a>
+        </div>
+    </nav>
+
+    <div id="contenido">
+        {%block content%}
+        {%endblock%}
+    </div>
+    <footer>copyright Juan Pain Ramirez© 2022</footer>
+    
+</body>
+</html>

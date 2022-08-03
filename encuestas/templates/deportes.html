@@ -1,0 +1,32 @@
+{%extends 'layout.html' %}
+{%load static%}
+
+{%block title%}
+Deportes
+{%endblock%}
+
+{%block content%}
+
+
+<div class="noticiasContainer">
+    {%for n in noticias%}
+    {%if n.categoria == "deportes"%}
+    <div class="noticiaContainer">
+        <h1>{{n.titulo | capfirst}}</h1>
+        <p>{{n.descripcion}}</p>
+        {%if n.imgNoticia%}
+        <img src={{n.imgNoticia.url}} alt="imagen_noticia">
+        {%endif%}     
+    </div>
+    {%endif%}
+    {%endfor%}
+</div>
+{%for p in publicidad%}
+{%if p.imgAd%}
+<div class="adsContainer">
+    <img src={{p.imgAd.url}} alt="banner_right">
+</div>
+{%endif%}
+{%endfor%}
+
+{%endblock%}

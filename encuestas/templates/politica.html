@@ -1,0 +1,36 @@
+{%extends 'layout.html' %}
+{%load static%}
+
+
+{%block title%}
+Politica
+{%endblock%}
+
+{%block content%}
+
+<div class="noticiasContainer">
+    
+    {%for n in noticias%}
+    {%if n.categoria == "politica"%}
+    <div class="noticiaContainer">
+        <h1>{{n.titulo | capfirst}}</h1>
+        <p>{{n.descripcion}}</p>
+        {%if n.imgNoticia%}
+        <img src={{n.imgNoticia.url}} alt="imagen_noticia">
+        {%endif%}
+    </div>
+    {%endif%}
+    {%endfor%}
+    
+
+    <!-- <div class="noticiaContainer">
+        <h1>Maduro se reencontró con el fantasma de chavez</h1>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.pHsqSyS6ZzYlcjMnwzj7NQHaEz%26pid%3DApi&f=1" alt="">
+    </div>
+
+    <div class="noticiaContainer">
+        <h1>Ucranianas Vendran a colombia</h1>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-vXOjWAL7VgQ%2FWLSI6QSZk1I%2FAAAAAAAACXY%2FAWpqikh2n_E8Yd0BaIATjkNbDV88SFgNACLcB%2Fw1200-h630-p-k-no-nu%2Fpor-que-las-mujeres-ucranianas.jpg&f=1&nofb=1" alt="">
+    </div> -->
+</div>
+{%endblock%}
